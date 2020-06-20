@@ -1,5 +1,9 @@
 package com.fly.pojo;
 
+import org.apache.ibatis.type.Alias;
+
+//注解设置别名是优先于xml的
+@Alias("user")
 public class User {
     private int id;  //id
     private String name;   //姓名
