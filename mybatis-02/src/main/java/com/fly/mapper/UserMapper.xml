@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fly.mapper.UserMapper">
+    <!--<select id="selectUser" resultType="user">
+        select * from user
+    </select>-->
+
+    <!--处理字段名和属性名不一样-->
+    <!--方案一-->
+    <!--<select id="selectUser" resultType="user">
+        select id, name, pwd as password from user
+    </select>-->
+
+    <!--方案二-->
+    <!--使用结果集映射->ResultMap-->
+    <resultMap id="UserMap" type="user">
+        <result column="pwd" property="password"/>
+    </resultMap>
+
+    <select id="selectUser" resultMap="UserMap">
+        select id, name, pwd from user
+    </select>
+</mapper>
