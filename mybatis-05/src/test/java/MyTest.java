@@ -37,10 +37,6 @@ public class MyTest {
     @Test
     public void testGetUserByRowBounds() {
         SqlSession sqlSession = MybatisUtils.getSession();
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-
-
-
         RowBounds rowBounds = new RowBounds(0, 2);
 
         //通过session.**方法进行传递rowBounds，[此种方式现在已经不推荐使用了]
