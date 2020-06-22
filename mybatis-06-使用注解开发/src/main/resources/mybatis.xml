@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--导入properties文件-->
+    <properties resource="db.properties"/>
+
+
+    <!--设置日志， name 和 value 不能写错-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!--配置别名,注意顺序-->
+    <!--<typeAliases>
+        <typeAlias type="com.fly.pojo.User" alias="user"/>
+    </typeAliases>-->
+
+    <typeAliases>
+        <package name="com.fly.pojo"/>
+    </typeAliases>
+
+
+
+    <!--environment 元素体中包含了事务管理和连接池的配置-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--注册mapper对象-->
+    <mappers>
+        <mapper resource="com/fly/mapper/UserMapper.xml"/>
+    </mappers>
+
+
+</configuration>
