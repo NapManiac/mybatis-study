@@ -16,6 +16,7 @@
         <module>mybatis-06-使用注解开发</module>
         <module>mybatis-07-一对多</module>
         <module>mybatis-07-多对一</module>
+        <module>mybatis-08-一对多</module>
     </modules>
 
     <dependencies>

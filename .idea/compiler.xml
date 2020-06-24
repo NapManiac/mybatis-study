@@ -10,6 +10,7 @@
         <module name="mybatis-04" />
         <module name="mybatis-06-使用注解开发" />
         <module name="mybatis-01" />
+        <module name="mybatis-08-一对多" />
         <module name="mybatis-02" />
         <module name="mybatis-07-多对一" />
       </profile>
